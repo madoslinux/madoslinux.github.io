@@ -1,7 +1,7 @@
 {
-  "iso": "madOS-1.72.4-beta-minimal-x86_64.iso",
+  "iso": "madOS-1.72.5-beta-minimal-x86_64.iso",
   "size_mb": 1881,
-  "version": "1.72.4-beta",
+  "version": "1.72.5-beta",
   "build_date": "2026.03.10",
-  "url": "https://github.com/madkoding/mad-os/releases/download/v1.72.4-beta/madOS-1.72.4-beta-minimal-x86_64.iso"
+  "url": "https://github.com/madkoding/mad-os/releases/download/v1.72.5-beta/madOS-1.72.5-beta-minimal-x86_64.iso"
 }
