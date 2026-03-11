@@ -1,7 +1,7 @@
 {
-  "iso": "madOS-1.75.3-beta-minimal-x86_64.iso",
+  "iso": "madOS-.1.75.5-beta-minimal-x86_64.iso",
   "size_mb": 1882,
-  "version": "1.75.3-beta",
+  "version": ".1.75.5-beta",
   "build_date": "2026.03.11",
-  "url": "https://github.com/madkoding/mad-os/releases/download/v1.75.3-beta/madOS-1.75.3-beta-minimal-x86_64.iso"
+  "url": "https://github.com/madkoding/mad-os/releases/download/v.1.75.5-beta/madOS-.1.75.5-beta-minimal-x86_64.iso"
 }
