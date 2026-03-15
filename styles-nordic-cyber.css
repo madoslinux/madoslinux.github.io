@@ -74,6 +74,7 @@
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
     --font-segment: 'Michroma', var(--font-mono);
+    --font-segment-weight: 700;
 
     /* Spacing scale */
     --s1: 0.25rem;
@@ -466,8 +467,8 @@ img {
 
 .stat-value {
     display: block;
-    font-size: 2.65rem;
-    font-weight: 400;
+    font-size: 1.99rem;
+    font-weight: 700;
     font-family: var(--font-segment);
     color: var(--neon-cyan);
     line-height: 1.2;
@@ -542,8 +543,8 @@ img {
 .section-label {
     display: inline-block;
     font-family: var(--font-segment);
-    font-size: 0.95rem;
-    font-weight: 400;
+    font-size: 0.71rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--neon-purple);
@@ -654,8 +655,8 @@ img {
 
 .feature-card-hero h3 {
     font-family: var(--font-segment);
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--text-primary);
     margin-bottom: var(--s1);
     text-shadow: 0 0 6px rgba(93, 216, 238, 0.2);
@@ -728,8 +729,8 @@ img {
 
 .feature-text h3 {
     font-family: var(--font-segment);
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 0.9rem;
+    font-weight: 700;
     margin-bottom: var(--s1);
     color: var(--text-primary);
     text-shadow: 0 0 6px rgba(93, 216, 238, 0.2);
@@ -1151,17 +1152,17 @@ kbd.brand-key svg {
 
 .monitor-label {
     font-family: var(--font-segment);
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--text-muted);
     text-shadow: 0 0 4px rgba(93, 216, 238, 0.15);
 }
 
 .monitor-value {
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: var(--neon-cyan);
     font-family: var(--font-segment);
-    font-weight: 400;
+    font-weight: 700;
     text-shadow:
         0 0 5px rgba(93, 216, 238, 0.5),
         0 0 12px rgba(93, 216, 238, 0.25);
@@ -1857,8 +1858,8 @@ kbd.brand-key svg {
 
 .roadmap-pillar-header h3 {
     font-family: var(--font-segment);
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 0.825rem;
+    font-weight: 700;
     color: var(--neon-cyan);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -2057,8 +2058,8 @@ kbd.brand-key svg {
 
 .matrix-header span {
     font-family: var(--font-segment);
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.71rem;
+    font-weight: 700;
     color: var(--neon-purple);
     text-transform: uppercase;
     letter-spacing: 0.08em;
