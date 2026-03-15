@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate OG Image for madOS - Two column layout
+Generate OG Image for madOS - Two column layout with description
 Logo on left, content on right
 """
 
@@ -21,17 +21,15 @@ def create_og_image():
         except:
             font_path = None
     
-    # Load fonts - smaller sizes
+    # Load fonts
     if font_path and os.path.exists(font_path):
         font_badge = ImageFont.truetype(font_path, 16)
         font_tagline = ImageFont.truetype(font_path, 32)
-        font_stats = ImageFont.truetype(font_path, 36)
+        font_desc = ImageFont.truetype(font_path, 18)
     else:
         font_badge = ImageFont.load_default()
         font_tagline = ImageFont.load_default()
-        font_stats = ImageFont.load_default()
-    
-    font_label = ImageFont.load_default()
+        font_desc = ImageFont.load_default()
     
     # Colors
     bg = (15, 17, 23)
@@ -48,16 +46,16 @@ def create_og_image():
     # Left column - Logo
     try:
         logo = Image.open('mados-logo.png')
-        logo = logo.resize((280, int(280 * logo.height / logo.width)), Image.Resampling.LANCZOS)
-        logo_x = 120
+        logo = logo.resize((300, int(300 * logo.height / logo.width)), Image.Resampling.LANCZOS)
+        logo_x = 100
         logo_y = (height - logo.height) // 2
         img.paste(logo, (logo_x, logo_y), logo if logo.mode == 'RGBA' else None)
     except:
         pass
     
     # Right column - Content
-    content_x = 520
-    content_y = 180
+    content_x = 480
+    content_y = 160
     
     # Badge
     badge_text = "POWERED BY OLLAMA AND OPENCODE"
@@ -67,20 +65,19 @@ def create_og_image():
     # Tagline
     tagline_text = "AI-Orchestrated Arch Linux"
     draw.text((content_x, content_y), tagline_text, font=font_tagline, fill=purple)
-    content_y += 100
+    content_y += 70
     
-    # Stats - horizontal
-    stats = [("300MB", "RAM Usage"), ("1.9GB", "Min RAM"), ("100%", "Open Source")]
-    stat_spacing = 160
+    # Description - multi-line
+    desc_lines = [
+        "Nordic cyberpunk distribution with",
+        "integrated local AI. Optimized for",
+        "low-RAM systems with Sway/Hyprland",
+        "and 300MB memory footprint."
+    ]
     
-    for i, (val, lbl) in enumerate(stats):
-        x = content_x + i * stat_spacing
-        
-        # Value
-        draw.text((x, content_y), val, font=font_stats, fill=cyan)
-        
-        # Label
-        draw.text((x, content_y + 45), lbl, font=font_label, fill=gray)
+    for line in desc_lines:
+        draw.text((content_x, content_y), line, font=font_desc, fill=gray)
+        content_y += 32
     
     # Border
     draw.rectangle([10, 10, width-10, height-10], outline=cyan, width=3)
