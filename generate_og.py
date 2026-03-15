@@ -2,6 +2,7 @@
 """
 Generate OG Image for madOS with updated branding
 Size: 1200x630 pixels (Open Graph standard)
+Uses same colors and fonts as the website
 """
 
 from PIL import Image, ImageDraw, ImageFont
@@ -11,178 +12,154 @@ def create_og_image():
     # Image dimensions
     width, height = 1200, 630
     
-    # Colors
-    bg_dark = (13, 17, 23)  # #0d1117
-    bg_mid = (26, 29, 35)   # #1a1d23
-    neon_cyan = (93, 216, 238)  # #5dd8ee
-    neon_purple = (224, 124, 216)  # #e07cd8
-    text_muted = (160, 168, 184)  # #a0a8b8
-    text_white = (255, 255, 255)
+    # Colors from website CSS
+    bg_base = (36, 41, 51)  # --nord0: #242933
+    bg_surface = (46, 52, 64)  # --nord1: #2e3440
+    neon_cyan = (93, 216, 238)  # --neon-cyan: #5dd8ee
+    neon_purple = (224, 124, 216)  # --neon-purple: #e07cd8
+    text_primary = (236, 239, 244)  # --nord6: #eceff4
+    text_muted = (216, 222, 233)  # --nord4: #d8dee9 with opacity
     
-    # Create gradient background
-    img = Image.new('RGB', (width, height), bg_dark)
+    # Create base image
+    img = Image.new('RGB', (width, height), bg_base)
     draw = ImageDraw.Draw(img)
     
-    # Create gradient effect
-    for y in range(height):
-        ratio = y / height
-        r = int(bg_dark[0] + (bg_mid[0] - bg_dark[0]) * ratio)
-        g = int(bg_dark[1] + (bg_mid[1] - bg_dark[1]) * ratio)
-        b = int(bg_dark[2] + (bg_mid[2] - bg_dark[2]) * ratio)
-        draw.line([(0, y), (width, y)], fill=(r, g, b))
+    # Try to load fonts - using system fonts similar to Inter and Michroma
+    font_paths = [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+        "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf",
+        "/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf",
+    ]
     
-    # Add subtle grid pattern
-    for x in range(0, width, 50):
-        draw.line([(x, 0), (x, height)], fill=(93, 216, 238, 10), width=1)
-    for y in range(0, height, 50):
-        draw.line([(0, y), (width, y)], fill=(93, 216, 238, 10), width=1)
+    font_regular_paths = [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+        "/usr/share/fonts/truetype/freefont/FreeSans.ttf",
+        "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf",
+    ]
     
-    # Add radial glow effects
-    # Top-right glow (cyan)
-    for r in range(300, 0, -5):
-        alpha = int(15 * (r / 300))
-        draw.ellipse([width-400-r, -100-r, width-400+r, -100+r], 
-                    outline=(neon_cyan[0], neon_cyan[1], neon_cyan[2], alpha), width=2)
+    font_mono_paths = [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf",
+    ]
     
-    # Bottom-left glow (purple)
-    for r in range(250, 0, -5):
-        alpha = int(15 * (r / 250))
-        draw.ellipse([-100-r, height-300-r, -100+r, height-300+r], 
-                    outline=(neon_purple[0], neon_purple[1], neon_purple[2], alpha), width=2)
+    def load_font(paths, size):
+        for path in paths:
+            if os.path.exists(path):
+                try:
+                    return ImageFont.truetype(path, size)
+                except:
+                    continue
+        return ImageFont.load_default()
     
-    # Try to load fonts
-    try:
-        # Try system fonts
-        font_michroma = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 48)
-        font_michroma_small = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 20)
-        font_inter = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 28)
-        font_inter_small = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-        font_mono = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 16)
-        font_stats = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 42)
-        font_stats_label = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 14)
-    except:
-        # Fallback to default font
-        font_michroma = ImageFont.load_default()
-        font_michroma_small = ImageFont.load_default()
-        font_inter = ImageFont.load_default()
-        font_inter_small = ImageFont.load_default()
-        font_mono = ImageFont.load_default()
-        font_stats = ImageFont.load_default()
-        font_stats_label = ImageFont.load_default()
+    # Load fonts
+    font_title = load_font(font_paths, 72)  # Large title
+    font_tagline = load_font(font_paths, 36)  # Tagline
+    font_badge = load_font(font_paths, 20)  # Badge text
+    font_body = load_font(font_regular_paths, 24)  # Description
+    font_stats = load_font(font_paths, 48)  # Stats numbers
+    font_stats_label = load_font(font_regular_paths, 16)  # Stats labels
+    font_terminal = load_font(font_mono_paths, 18)  # Terminal text
     
-    # Draw border
-    border_width = 3
-    draw.rectangle([border_width, border_width, width-border_width, height-border_width], 
-                   outline=neon_cyan, width=border_width)
-    
-    # Corner accents
-    corner_size = 40
-    corner_offset = 20
-    # Top-left
-    draw.line([(corner_offset, corner_offset), (corner_offset + corner_size, corner_offset)], 
-              fill=neon_cyan, width=3)
-    draw.line([(corner_offset, corner_offset), (corner_offset, corner_offset + corner_size)], 
-              fill=neon_cyan, width=3)
-    # Top-right
-    draw.line([(width - corner_offset - corner_size, corner_offset), (width - corner_offset, corner_offset)], 
-              fill=neon_cyan, width=3)
-    draw.line([(width - corner_offset, corner_offset), (width - corner_offset, corner_offset + corner_size)], 
-              fill=neon_cyan, width=3)
-    # Bottom-left
-    draw.line([(corner_offset, height - corner_offset), (corner_offset + corner_size, height - corner_offset)], 
-              fill=neon_cyan, width=3)
-    draw.line([(corner_offset, height - corner_offset - corner_size), (corner_offset, height - corner_offset)], 
-              fill=neon_cyan, width=3)
-    # Bottom-right
-    draw.line([(width - corner_offset - corner_size, height - corner_offset), (width - corner_offset, height - corner_offset)], 
-              fill=neon_cyan, width=3)
-    draw.line([(width - corner_offset, height - corner_offset - corner_size), (width - corner_offset, height - corner_offset)], 
-              fill=neon_cyan, width=3)
-    
-    # Left section content
+    # Layout
     left_margin = 80
-    top_margin = 80
+    right_margin = 80
+    top_margin = 60
     
-    # Badge
+    # === LEFT SECTION ===
+    
+    # Badge: "Powered by Ollama and OpenCode"
     badge_text = "Powered by Ollama and OpenCode"
-    badge_padding = 20
-    bbox = draw.textbbox((0, 0), badge_text, font=font_michroma_small)
-    badge_width = bbox[2] - bbox[0] + badge_padding * 2
-    badge_height = bbox[3] - bbox[1] + 15
+    badge_bbox = draw.textbbox((0, 0), badge_text, font=font_badge)
+    badge_width = badge_bbox[2] - badge_bbox[0] + 40
+    badge_height = badge_bbox[3] - badge_bbox[1] + 20
     
-    # Draw badge background
-    draw.rounded_rectangle([left_margin, top_margin, left_margin + badge_width, top_margin + badge_height], 
-                          radius=100, fill=(93, 216, 238, 25), outline=neon_cyan, width=1)
-    draw.text((left_margin + badge_padding, top_margin + 7), badge_text, font=font_michroma_small, fill=neon_cyan)
+    # Draw badge background (rounded rectangle)
+    badge_y = top_margin
+    draw.rounded_rectangle(
+        [left_margin, badge_y, left_margin + badge_width, badge_y + badge_height],
+        radius=100,
+        fill=(93, 216, 238, 25),
+        outline=neon_cyan,
+        width=2
+    )
+    draw.text(
+        (left_margin + 20, badge_y + 10),
+        badge_text,
+        font=font_badge,
+        fill=neon_cyan
+    )
     
     # Load and draw logo
+    current_y = badge_y + badge_height + 30
     try:
         logo = Image.open('mados-logo.png')
-        # Resize logo to fit nicely
-        logo_width = 350
+        # Resize logo
+        logo_width = 400
         aspect_ratio = logo.height / logo.width
         logo_height = int(logo_width * aspect_ratio)
         logo = logo.resize((logo_width, logo_height), Image.Resampling.LANCZOS)
         
         # Paste logo
-        logo_y = int(top_margin + badge_height + 30)
-        img.paste(logo, (left_margin, logo_y), logo if logo.mode == 'RGBA' else None)
-        
-        current_y = logo_y + logo_height + 30
+        img.paste(logo, (left_margin, int(current_y)), logo if logo.mode == 'RGBA' else None)
+        current_y += logo_height + 40
     except Exception as e:
         print(f"Could not load logo: {e}")
-        current_y = top_margin + badge_height + 50
+        current_y += 100
     
-    # Tagline
+    # Tagline: "AI-Orchestrated Arch Linux"
     tagline = "AI-Orchestrated Arch Linux"
-    draw.text((left_margin, current_y), tagline, font=font_michroma, fill=neon_purple)
-    current_y += 70
+    draw.text((left_margin, current_y), tagline, font=font_tagline, fill=neon_purple)
+    current_y += 60
     
     # Description
-    description = "Nordic cyberpunk distribution optimized for"
-    draw.text((left_margin, current_y), description, font=font_inter, fill=text_muted)
-    current_y += 40
-    description2 = "low-RAM systems with local AI integration"
-    draw.text((left_margin, current_y), description2, font=font_inter, fill=text_muted)
+    description_line1 = "Nordic cyberpunk distribution optimized for"
+    description_line2 = "low-RAM systems with local AI integration"
+    draw.text((left_margin, current_y), description_line1, font=font_body, fill=text_muted)
+    current_y += 35
+    draw.text((left_margin, current_y), description_line2, font=font_body, fill=text_muted)
     
-    # Right section - Terminal window
+    # === RIGHT SECTION - Terminal ===
     terminal_x = 680
     terminal_y = 120
     terminal_width = 440
-    terminal_height = 200
+    terminal_height = 180
     
     # Terminal background
-    draw.rounded_rectangle([terminal_x, terminal_y, terminal_x + terminal_width, terminal_y + terminal_height], 
-                          radius=12, fill=(13, 17, 23, 230), outline=neon_cyan, width=1)
+    draw.rounded_rectangle(
+        [terminal_x, terminal_y, terminal_x + terminal_width, terminal_y + terminal_height],
+        radius=12,
+        fill=bg_surface,
+        outline=neon_cyan,
+        width=2
+    )
     
     # Terminal header dots
-    dot_radius = 6
     dot_y = terminal_y + 20
     dot_colors = [(255, 95, 86), (255, 189, 46), (39, 201, 63)]
     for i, color in enumerate(dot_colors):
-        dot_x = terminal_x + 25 + i * 20
-        draw.ellipse([dot_x - dot_radius, dot_y - dot_radius, 
-                     dot_x + dot_radius, dot_y + dot_radius], fill=color)
+        dot_x = terminal_x + 25 + i * 25
+        draw.ellipse([dot_x - 6, dot_y - 6, dot_x + 6, dot_y + 6], fill=color)
     
     # Terminal content
     content_y = terminal_y + 55
     content_x = terminal_x + 25
     
-    # $ prompt
-    draw.text((content_x, content_y), "$", font=font_mono, fill=neon_cyan)
-    draw.text((content_x + 20, content_y), "sudo install-mados", font=font_mono, fill=neon_purple)
-    content_y += 30
+    draw.text((content_x, content_y), "$", font=font_terminal, fill=neon_cyan)
+    draw.text((content_x + 20, content_y), "sudo install-mados", font=font_terminal, fill=neon_purple)
+    content_y += 32
     
-    draw.text((content_x + 20, content_y), "Detecting environment...", font=font_mono, fill=text_muted)
-    content_y += 30
+    draw.text((content_x + 20, content_y), "Detecting environment...", font=font_terminal, fill=text_muted)
+    content_y += 32
     
-    draw.text((content_x + 20, content_y), "AI optimization enabled", font=font_mono, fill=text_muted)
-    content_y += 30
+    draw.text((content_x + 20, content_y), "AI optimization enabled", font=font_terminal, fill=text_muted)
+    content_y += 32
     
-    draw.text((content_x + 20, content_y), "Ready to install!", font=font_mono, fill=(63, 185, 80))
+    draw.text((content_x + 20, content_y), "Ready to install!", font=font_terminal, fill=(63, 185, 80))
     
-    # Stats section
-    stats_y = terminal_y + terminal_height + 60
+    # === STATS SECTION ===
+    stats_y = terminal_y + terminal_height + 50
     stats = [
         ("300MB", "RAM Usage"),
         ("1.9GB", "Min RAM"),
@@ -195,21 +172,31 @@ def create_og_image():
     for i, (value, label) in enumerate(stats):
         x = start_x + i * stat_spacing
         
-        # Draw separator line (except for first)
+        # Separator line
         if i > 0:
-            draw.line([(x - 20, stats_y - 10), (x - 20, stats_y + 50)], 
-                     fill=(93, 216, 238, 50), width=1)
+            draw.line([(x - 20, stats_y), (x - 20, stats_y + 60)], fill=(93, 216, 238, 50), width=1)
         
         # Stat value
         draw.text((x, stats_y), value, font=font_stats, fill=neon_cyan)
         
         # Stat label
-        label_y = stats_y + 50
+        label_y = stats_y + 55
         draw.text((x, label_y), label, font=font_stats_label, fill=text_muted)
+    
+    # === BORDER ===
+    border_width = 4
+    draw.rectangle(
+        [border_width, border_width, width - border_width, height - border_width],
+        outline=neon_cyan,
+        width=border_width
+    )
     
     # Save image
     img.save('og-image.png', 'PNG', quality=95)
     print("✓ OG Image generated: og-image.png (1200x630)")
+    print("  - Clean background (#242933)")
+    print("  - Using system fonts similar to website")
+    print("  - Same color palette as the site")
 
 if __name__ == "__main__":
     create_og_image()
