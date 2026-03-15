@@ -1228,10 +1228,15 @@ kbd.brand-key svg {
 }
 
 .download-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--s6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: var(--s8);
+}
+
+.download-grid .download-card {
+    width: 100%;
+    max-width: 600px;
 }
 
 .download-badge {
@@ -2145,6 +2150,12 @@ kbd.brand-key svg {
     border: 1px solid rgba(163, 190, 140, 0.2);
 }
 
+.roadmap-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--s6);
+}
+
 
 /* ============================================
    Animations
@@ -2224,7 +2235,7 @@ kbd.brand-key svg {
     }
 
     .download-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .download-card {
