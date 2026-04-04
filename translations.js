@@ -11,8 +11,8 @@ const translations = {
         },
         hero: {
             badge: "Powered by Ollama and OpenCode",
-            tagline: "AI-Orchestrated Arch Linux",
-            subtitle: "A Nordic cyberpunk Arch Linux distribution optimized for low-RAM systems, with integrated AI for smart system management. Nord palette, neon glow, synthwave soul.",
+            tagline: "madOS - ArchLinux Distro",
+            subtitle: "A lightweight Arch Linux distribution optimized for low-RAM systems, with integrated AI assistance for smart system management and development. Nord theme, minimal footprint, maximum performance.",
             download: "Download madOS",
             viewOnGitHub: "View on GitHub",
             ramUsage: "RAM Usage",
@@ -121,7 +121,7 @@ const translations = {
         hero: {
             badge: "Impulsado por Ollama y OpenCode",
             tagline: "Arch Linux orquestado por IA",
-            subtitle: "Una distribución Arch Linux cyberpunk nórdica optimizada para sistemas de baja RAM, con IA integrada para gestión inteligente del sistema. Paleta Nord, resplandor neón, alma synthwave.",
+            subtitle: "Una distribución Arch Linux ligera optimizada para sistemas de baja RAM, con asistencia IA integrada para gestión inteligente del sistema y desarrollo. Tema Nord, huella mínima, máximo rendimiento.",
             download: "Descargar madOS",
             viewOnGitHub: "Ver en GitHub",
             ramUsage: "Uso de RAM",
@@ -230,7 +230,7 @@ const translations = {
         hero: {
             badge: "Propulsé par Ollama et OpenCode",
             tagline: "Arch Linux orchestré par IA",
-            subtitle: "Une distribution Arch Linux cyberpunk nordique optimisée pour les systèmes à faible RAM, avec IA intégrée pour une gestion intelligente du système. Palette Nord, lueur néon, âme synthwave.",
+            subtitle: "Une distribution Arch Linux légère optimisée pour les systèmes à faible RAM, avec assistance IA intégrée pour la gestion intelligente du système et le développement. Thème Nord, empreinte minimale, performance maximale.",
             download: "Télécharger madOS",
             viewOnGitHub: "Voir sur GitHub",
             ramUsage: "Utilisation RAM",
@@ -339,7 +339,7 @@ const translations = {
         hero: {
             badge: "Powered by Ollama and OpenCode",
             tagline: "Arch Linux orquestrado por IA",
-            subtitle: "Uma distribuição Arch Linux cyberpunk nórdica otimizada para sistemas de baixa RAM, com IA integrada para gerenciamento inteligente do sistema. Paleta Nord, brilho néon, alma synthwave.",
+            subtitle: "Uma distribuição Arch Linux leve otimizada para sistemas de baixa RAM, com assistência IA integrada para gerenciamento inteligente do sistema e desenvolvimento. Tema Nord, huella mínima, máximo rendimiento.",
             download: "Baixar madOS",
             viewOnGitHub: "Ver no GitHub",
             ramUsage: "Uso de RAM",
@@ -448,7 +448,7 @@ const translations = {
         hero: {
             badge: "Powered by Ollama and OpenCode",
             tagline: "Arch Linux orchestrato da IA",
-            subtitle: "Una distribuzione Arch Linux cyberpunk nordica ottimizzata per sistemi a bassa RAM, con IA integrata per la gestione intelligente del sistema. Paletta Nord, bagliore neon, anima synthwave.",
+            subtitle: "Una distribuzione Arch Linux leggera ottimizzata per sistemi a bassa RAM, con assistenza IA integrata per la gestione intelligente del sistema e lo sviluppo. Tema Nord, impronta minima, prestazioni massime.",
             download: "Scarica madOS",
             viewOnGitHub: "Vedi su GitHub",
             ramUsage: "Utilizzo RAM",
@@ -557,7 +557,7 @@ const translations = {
         hero: {
             badge: "Angetrieben von Ollama und OpenCode",
             tagline: "KI-gesteuertes Arch Linux",
-            subtitle: "Eine nordische Cyberpunk-Arch-Linux-Distribution, optimiert für Systeme mit wenig RAM, mit integrierter KI für intelligentes Systemmanagement. Nord-Palette, Neon-Glühen, Synthwave-Seele.",
+            subtitle: "Eine leichte Arch-Linux-Distribution, optimiert für Systeme mit wenig RAM, mit integrierter KI-Unterstützung für intelligentes Systemmanagement und Entwicklung. Nord-Theme, minimaler Footprint, maximale Leistung.",
             download: "madOS herunterladen",
             viewOnGitHub: "Auf GitHub ansehen",
             ramUsage: "RAM-Nutzung",
@@ -665,8 +665,8 @@ const translations = {
         },
         hero: {
             badge: "由 Ollama 和 OpenCode 提供支持",
-            tagline: "AI 编排的 Arch Linux",
-            subtitle: "针对低内存系统优化的北欧赛博朋克 Arch Linux 发行版，集成 AI 进行智能系统管理。 Nord 调色板、霓虹光芒、合成波灵魂。",
+            tagline: "AI 驱动的 Arch Linux",
+            subtitle: "针对低内存系统优化的轻量级 Arch Linux 发行版，集成 AI 辅助功能实现智能系统管理和开发。 Nord 主题，最小占用，最大性能。",
             download: "下载 madOS",
             viewOnGitHub: "在 GitHub 上查看",
             ramUsage: "内存使用",
@@ -775,7 +775,7 @@ const translations = {
         hero: {
             badge: "Ollama と OpenCode で駆動",
             tagline: "AI オーケストレーション Arch Linux",
-            subtitle: "低RAMシステムに最適化された北欧サイバーパンクArch Linuxディストリビューション。Intelligentシステム管理のための統合AI。Nordパレット、ネオン輝き、シンセウェーブの魂。",
+            subtitle: "低RAMシステムに最適化された軽量Arch Linuxディストリビューション、智能システム管理与開発のための統合AIアシスタンス。Nordテーマ、ミニマムフットプリント、マックスパフォーマンス。",
             download: "madOSをダウンロード",
             viewOnGitHub: "GitHubで見る",
             ramUsage: "RAM使用量",
@@ -884,7 +884,7 @@ const translations = {
         hero: {
             badge: "Ollama 및 OpenCode 제공",
             tagline: "AI 오케스트레이션 Arch Linux",
-            subtitle: "저RAM 시스템에 최적화된 노르딕 사이버펑크 Arch Linux 배포판, 통합 AI로 스마트 시스템 관리. Nord 팔레트, 네온 글로우, 신스웨이브 소울.",
+            subtitle: "저RAM 시스템에 최적화된 경량 Arch Linux 배포판, 통합 AI 어시스턴스로 스마트 시스템 관리 및 개발 지원. Nord 테마, 최소 공간, 최대 성능.",
             download: "madOS 다운로드",
             viewOnGitHub: "GitHub에서 보기",
             ramUsage: "RAM 사용량",
