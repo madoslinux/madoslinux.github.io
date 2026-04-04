@@ -101,7 +101,7 @@ const translations = {
             viewProject: "View Project Roadmap"
         },
         footer: {
-            brand: "AI-Orchestrated Arch Linux // Nordic Cyberpunk & Synthwave",
+            brand: "madOS - ArchLinux Distro",
             project: "Project",
             resources: "Resources",
             community: "Community",
@@ -210,7 +210,7 @@ const translations = {
             viewProject: "Ver hoja de ruta del proyecto"
         },
         footer: {
-            brand: "Arch Linux orquestado por IA // Cyberpunk nórdico y Synthwave",
+            brand: "Arch Linux orquestado por IA",
             project: "Proyecto",
             resources: "Recursos",
             community: "Comunidad",
@@ -319,7 +319,7 @@ const translations = {
             viewProject: "Voir la feuille de route du projet"
         },
         footer: {
-            brand: "Arch Linux orchestré par IA // Cyberpunk nordique et Synthwave",
+            brand: "Arch Linux orchestré par IA",
             project: "Projet",
             resources: "Ressources",
             community: "Communauté",
@@ -428,7 +428,7 @@ const translations = {
             viewProject: "Ver roadmap do projeto"
         },
         footer: {
-            brand: "Arch Linux orquestrado por IA // Cyberpunk nórdico e Synthwave",
+            brand: "Arch Linux orquestrado por IA",
             project: "Projeto",
             resources: "Recursos",
             community: "Comunidade",
@@ -537,7 +537,7 @@ const translations = {
             viewProject: "Vedi roadmap del progetto"
         },
         footer: {
-            brand: "Arch Linux orchestrato da IA // Cyberpunk nordico e Synthwave",
+            brand: "Arch Linux orchestrato da IA",
             project: "Progetto",
             resources: "Risorse",
             community: "Comunità",
@@ -646,7 +646,7 @@ const translations = {
             viewProject: "Projekt-Roadmap ansehen"
         },
         footer: {
-            brand: "KI-gesteuertes Arch Linux // Nordischer Cyberpunk und Synthwave",
+            brand: "KI-gesteuertes Arch Linux",
             project: "Projekt",
             resources: "Ressourcen",
             community: "Community",
@@ -755,7 +755,7 @@ const translations = {
             viewProject: "查看项目路线图"
         },
         footer: {
-            brand: "AI 编排的 Arch Linux // 北欧赛博朋克与合成波",
+            brand: "AI 驱动的 Arch Linux",
             project: "项目",
             resources: "资源",
             community: "社区",
@@ -864,7 +864,7 @@ const translations = {
             viewProject: "プロジェクトロードマップを表示"
         },
         footer: {
-            brand: "AIオーケストレーションArch Linux // 北欧サイバーパンク＆シンセウェーブ",
+            brand: "AI オーケストレーション Arch Linux",
             project: "プロジェクト",
             resources: "リソース",
             community: "コミュニティ",
@@ -973,7 +973,7 @@ const translations = {
             viewProject: "프로젝트 로드맵 보기"
         },
         footer: {
-            brand: "AI 오케스트레이션 Arch Linux // 노르딕 사이버펑크 및 신스웨이브",
+            brand: "AI 오케스트레이션 Arch Linux",
             project: "프로젝트",
             resources: "리소스",
             community: "커뮤니티",
