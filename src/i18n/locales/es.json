@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "features": "Características",
+    "desktop": "Escritorio",
+    "hardware": "Hardware",
+    "download": "Descargar",
+    "credits": "Créditos",
+    "roadmap": "Hoja de ruta",
+    "github": "GitHub"
+  },
+  "hero": {
+    "badge": "Impulsado por Ollama y OpenCode",
+    "tagline": "madOS - ArchLinux Distro",
+    "subtitle": "Una distribución Arch Linux ligera optimizada para sistemas de baja RAM, con asistencia IA integrada para gestión inteligente del sistema y desarrollo. Tema Nord, huella mínima, máximo rendimiento.",
+    "download": "Descargar madOS",
+    "viewOnGitHub": "Ver en GitHub",
+    "ramUsage": "Uso de RAM",
+    "minRam": "RAM mínima",
+    "openSource": "Código abierto"
+  },
+  "features": {
+    "label": "Capacidades",
+    "title": "Características principales",
+    "subtitle": "Todo lo que necesitas en un sistema operativo ligero, potente y retro-futurista",
+    "aiIntegration": "Integración Ollama & OpenCode",
+    "aiIntegrationDesc": "IA local con asistente Ollama + OpenCode para orquestación inteligente del sistema, generación de código, depuración y asistencia avanzada — preinstalado globalmente.",
+    "adaptiveDesktop": "Escritorio adaptativo",
+    "adaptiveDesktopDesc": "Detección automática de GPU al inicio — Hyprland con aceleración 3D, Sway con renderizado por software. Ambos con tema Nord a 800MB de RAM.",
+    "lowRam": "Optimizado para baja RAM",
+    "lowRamDesc": "Diseñado para sistemas de 1.9GB con ZRAM, EarlyOOM y ajuste agresivo del kernel.",
+    "multiGpu": "Multi-GPU",
+    "multiGpuDesc": "Controladores de pantalla Intel, AMD y NVIDIA preinstalados para amplio soporte de hardware.",
+    "persistentUsb": "USB persistente",
+    "persistentUsbDesc": "Crea una partición etiquetada y tus cambios sobreviven a los reinicios. Funciona con Ventoy también.",
+    "gtkInstaller": "Instalador GTK",
+    "gtkInstallerDesc": "Hermoso instalador gráfico con tema Nord, progreso en tiempo real y pantalla de inicio.",
+    "devReady": "Listo para desarrollo",
+    "devReadyDesc": "Node.js, npm, Git, VS Code y Oh My Zsh preinstalados de fábrica.",
+    "languages": "9 Idiomas",
+    "languagesDesc": "Inglés, español, francés, portugués, italiano, alemán, chino, japonés y coreano con diseño de teclado automático.",
+    "wifi": "WiFi incorporado",
+    "wifiDesc": "Escaneo de red y conexión WPA2/WPA3 directamente desde el instalador.",
+    "secure": "Seguro por defecto",
+    "secureDesc": "Root bloqueado, gestor de arranque UEFI dual, contraseñas seguras y aislamiento por usuario.",
+    "steamDeck": "Compatible con Steam Deck",
+    "steamDeckDesc": "Enlaces completos de gamepad a WM para Steam Deck. Gestiona ventanas, espacios de trabajo y medios con botones y palancas traseras — con inhibición automática de juegos.",
+    "xbox": "Controlador Xbox",
+    "xboxDesc": "Soporte para mando Xbox Series con combos LT/RT de medios, botón Share para captura automática y detección de perfil — cero configuración necesaria."
+  },
+  "showcase": {
+    "label": "Entorno",
+    "title": "Escritorio nórdico neón",
+    "subtitle": "Compositor auto-detectado con estética cyberpunk nórdica — controlado por teclado, ligero, hermoso"
+  },
+  "hardware": {
+    "label": "Rendimiento",
+    "title": "Hardware objetivo",
+    "subtitle": "madOS da vida neón a hardware modesto — rendimiento cyberpunk en cualquier máquina",
+    "cpu": "CPU",
+    "cpuDesc": "Intel Atom / AMD o equivalente (x86_64)",
+    "ram": "RAM",
+    "ramDesc": "1.9GB mínimo (optimizado para memoria limitada)",
+    "gpu": "GPU",
+    "gpuDesc": "Intel, NVIDIA o AMD — auto-detectado con soporte de cómputo",
+    "storage": "Almacenamiento",
+    "storageDesc": "10GB mínimo (~5GB ISO, se expande al instalar)",
+    "boot": "Arranque",
+    "bootDesc": "Soporte UEFI y BIOS",
+    "monitor": "Monitor del sistema",
+    "ramInUse": "RAM en uso",
+    "cpuAvg": "CPU (promedio)",
+    "zram": "Compresión ZRAM",
+    "disk": "Disco"
+  },
+  "download": {
+    "label": "Obtenerlo",
+    "title": "Descargar madOS",
+    "subtitle": "Conecta y comienza tu experiencia madOS hoy",
+    "development": "Desarrollo",
+    "gettingStarted": "Comenzando",
+    "step1": "Descargar",
+    "step1Desc": "Obtén el ISO más reciente desde Internet Archive o GitHub Releases",
+    "step2": "Flashing USB",
+    "step2Code": "dd if=madOS-*.iso of=/dev/sdX bs=4M",
+    "step2Hint": "o usa Ventoy / balenaEtcher",
+    "step3": "Arrancar y listo",
+    "step3Desc": "El escritorio se carga automáticamente — úsalo en vivo o ejecuta el instalador",
+    "step4": "¡Listo!",
+    "step4Desc": "Asistente IA, herramientas de desarrollo y almacenamiento USB persistente opcional"
+  },
+  "credits": {
+    "label": "Agradecimientos",
+    "title": "Créditos",
+    "subtitle": "Proyectos de código abierto y contenido que alimentan este sueño cyberpunk"
+  },
+  "roadmap": {
+    "label": "Desarrollo",
+    "title": "Hoja de ruta",
+    "subtitle": "Sigue nuestro progreso y funciones próximas",
+    "viewProject": "Ver hoja de ruta del proyecto"
+  },
+  "footer": {
+    "brand": "madOS - ArchLinux Distro",
+    "project": "Proyecto",
+    "resources": "Recursos",
+    "community": "Comunidad",
+    "license": "© 2026 madOS. Licenciado bajo GPL-3.0."
+  }
+}
