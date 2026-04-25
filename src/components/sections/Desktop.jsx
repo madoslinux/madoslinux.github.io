@@ -26,14 +26,18 @@ export function Desktop() {
               madoslinux.github.io
             </div>
           </div>
-          {/* Placeholder for desktop screenshot */}
-          <div className="bg-cyber-bg-base aspect-[16/9] flex items-center justify-center">
-            <div className="text-center text-nord4/40">
-              <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-              </svg>
-              <p className="text-sm">Desktop Preview</p>
-            </div>
+          {/* Desktop preview video */}
+          <div className="bg-cyber-bg-base aspect-[289/180]">
+            <video
+              className="w-full h-full object-cover"
+              src="/video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>

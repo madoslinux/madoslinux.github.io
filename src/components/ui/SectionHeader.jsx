@@ -7,12 +7,12 @@ export function SectionHeader({ label, title, subtitle, className = '' }) {
         </span>
       )}
       {title && (
-        <h2 className="text-3xl md:text-4xl font-bold text-nord6 mb-3 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-nord6 mb-3 tracking-tight font-segment">
           {title}
         </h2>
       )}
       {subtitle && (
-        <p className="text-nord4/80 max-w-2xl mx-auto">
+        <p className="text-nord4/80 max-w-2xl mx-auto font-segment">
           {subtitle}
         </p>
       )}

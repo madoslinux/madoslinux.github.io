@@ -31,14 +31,14 @@ export function Hero() {
         </div>
 
         {/* Logo/Title */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-segment">
           <span className="bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent">
             {t('hero.tagline')}
           </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-nord4/80 max-w-3xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg md:text-xl text-nord4/80 max-w-3xl mx-auto mb-10 leading-relaxed font-segment">
           {t('hero.subtitle')}
         </p>
 

@@ -10,7 +10,7 @@
   },
   "hero": {
     "badge": "Powered by Ollama and OpenCode",
-    "tagline": "madOS - ArchLinux Distro",
+    "tagline": "madOS",
     "subtitle": "A lightweight Arch Linux distribution optimized for low-RAM systems, with integrated AI assistance for smart system management and development. Nord theme, minimal footprint, maximum performance.",
     "download": "Download madOS",
     "viewOnGitHub": "View on GitHub",
@@ -100,7 +100,7 @@
     "viewProject": "View Project Roadmap"
   },
   "footer": {
-    "brand": "madOS - ArchLinux Distro",
+    "brand": "madOS",
     "project": "Project",
     "resources": "Resources",
     "community": "Community",
